@@ -1,9 +1,9 @@
 import classes from './Input.module.css'
 
-const Input = (props) => {
+const InputComp = (props) => {
 
     return (
-        <div className={classes.Input} >
+        <div className={classes.input} >
             <label htmlFor={props.input.id} > {props.label}</label>
 
             <input {...props.Input} />
@@ -15,4 +15,4 @@ const Input = (props) => {
 
 };
 
-export default Input;
+export default InputComp;
