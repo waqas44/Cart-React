@@ -14,7 +14,7 @@ const Cart = (props) => {
                     name: 'sushi',
                     amount: '12.12',
                     description: ' good taste',
-                }].map((item) => (<li>{item.name} </li>))
+                }].map((item) => { <li>{item.name} </li> })
 
             }
         </ul>);
