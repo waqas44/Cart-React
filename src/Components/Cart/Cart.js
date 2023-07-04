@@ -4,21 +4,31 @@ import Modal from '../../Components/UI/Modal';
 
 
 const Cart = (props) => {
+    const MealData = [{
 
-    const cartItems = (
+        id: 'c1',
+        name: 'sushi',
+        amount: '12.12',
+        description: ' good taste',
+    }].map((item) => (<li>{item.name} </li>))
+    const cartItems =
         <ul className={classes['cart-items']}>
             {
-                [{
-
-                    id: 'c1',
-                    name: 'sushi',
-                    amount: '12.12',
-                    description: ' good taste',
-                }].map((item) => { <li>{item.name} </li> })
+                MealData
 
             }
-        </ul>);
+        </ul>;
+    // const cartItems = (
+    //     <ul className={classes['cart-items']}>
+    //         {
 
+    //         [{ id: 'c1', name: 'Sushi', amount: 2, price: 12.99 }].map((item) => (
+    //             <li>{item.name}</li>
+    //         ))
+
+    //         }
+    //     </ul>
+    // );
 
 
     return (
