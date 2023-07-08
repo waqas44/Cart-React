@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import { useRef, useState } from 'react';
+import InputComp from '../UI/Input';
 import classes from './MealItemForm.module.css';
 
-import InputComp from '../UI/Input';
-import { useRef } from 'react';
+
+
 const MealItemForm = (props) => {
-    const [amountIsValid, setAmounIsValid] = useState(false);
+    const [amountIsValid, setAmounIsValid] = useState(true);
     const amountInputRef = useRef();
 
 
-    const submit1Handler = (event) => {
+    const submitHandler = (event) => {
         event.preventdefault();
         const enteredAmount = amountInputRef.current.value;
         const enteredCurrentAmount = +enteredAmount;
 
-        if (enteredCurrentAmount.trim().length === 0 || enteredCurrentAmount < 1 || enteredCurrentAmount > 5) {
+        if (
+            enteredCurrentAmount.trim().length === 0 ||
+            enteredCurrentAmount < 1 ||
+            enteredCurrentAmount > 5
+        ) {
 
 
             setAmounIsValid(false);
@@ -24,7 +30,7 @@ const MealItemForm = (props) => {
     };
     return (
 
-        <form className={classes.form} onSubmit={submit1Handler}>
+        <form className={classes.form} onSubmit={submitHandler}>
             <InputComp label='Amount'
                 ref={amountInputRef}
                 input={{
