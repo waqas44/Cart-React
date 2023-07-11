@@ -13,7 +13,7 @@ const Cart = (props) => {
     const cartItemRemoveHandler = (id) => { };
     const cartItemAddHandler = (item) => { };
 
-    const cartItems = (
+    const cartItemsobj = (
         <ul className={classes['cart-items']}>
             {
                 cartCtx.items.map((item) => (
@@ -50,7 +50,7 @@ const Cart = (props) => {
     return (
         <Modal onClose={props.onClose}>
 
-            {cartItems}
+            {cartItemsobj}
             <div className={classes['total']}>
                 <span>Total Amount</span>
                 <span>{totalAmount} </span>
